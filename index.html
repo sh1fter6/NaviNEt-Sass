@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaviNEt - Conecta tu alma al internet</title>
+
+    <!-- Aqui enlazas el CSS que generes al compilar tu Sass.
+       NO escribas estilos en este archivo: todo va en scss/estilos.scss -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ============ NAVEGACION ============ -->
+    <header class="nav">
+        <div class="nav__logo">
+            <img class="nav__logo__img" src="img/logo.gif" alt="logo">
+            <a href="#inicio" class="nav__logo">NaviNEt</a>
+        </div>
+        <ul class="nav__menu">
+            <li class="nav__item"><a href="#features" class="nav__enlace">Requisitos</a></li>
+            <li class="nav__item"><a href="#precios" class="nav__enlace">Precios</a></li>
+            <li class="nav__item"><a href="#opiniones" class="nav__enlace">Opiniones</a></li>
+        </ul>
+        <a href="#precios" class="boton boton--primario nav__cta">Probar gratis</a>
+    </header>
+
+    <main>
+
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="inicio">
+            <div class="hero__contenido">
+                <span class="hero__badge">Nuevo - v2.0</span>
+                <h1 class="hero__titulo">Digitaliza tu mente, en el mundo virtual</h1>
+                <p class="hero__subtitulo">
+                    NaviNEt es un servicio espiritual y web que conecta tu mente al internet.
+                </p>
+                <div class="hero__acciones">
+                    <a href="#precios" class="boton boton--primario">Empezar ahora</a>
+                    <a href="#features" class="boton boton--secundario">Requisitos</a>
+                </div>
+                <p class="hero__nota">Sin tarjeta de credito - Cancela cuando quieras</p>
+            </div>
+            <div class="hero__visual">
+                <img src="img/hero.png" alt="ritual hecho con ia XDD">
+            </div>
+        </section>
+
+        <!-- ============ FEATURES ============ -->
+        <section class="features" id="features">
+            <h2 class="features__titulo">Todo lo que necesitas</h2>
+            <p class="features__subtitulo">Requisitos basicos para conectar con NaviNEt.</p>
+            <div class="features__grid">
+
+                <article class="feature">
+                    <div class="feature__icono">1</div>
+                    <h3 class="feature__titulo">Velas de resina de Álamo</h3>
+                    <p class="feature__texto">Nuestras velas estan hechas con resina de alamo, un material natural
+                        que se quema limpiamente y produce poco humo.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="feature__icono">2</div>
+                    <h3 class="feature__titulo">Wifi 8</h3>
+                    <p class="feature__texto">El alma necesita velocidades más allá de la luz para mantenerse estable
+                        dentro de la red.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <div class="feature__icono">3</div>
+                    <h3 class="feature__titulo">Sal negra</h3>
+                    <p class="feature__texto">La sal negra es un limpiador espiritual que ayuda a eliminar las energías
+                        negativas en cada sesión. No es absoolutamente necesario pero lo sugerimos.</p>
+                </article>
+
+                <!-- ZONA DE PERSONALIZACION:
+             agrega AL MENOS una feature propia (la cuarta).
+             Copia la estructura de arriba y pon tu idea. -->
+
+            </div>
+        </section>
+
+        <!-- ============ GALERIA ============ -->
+        <section class="galeria">
+            <div class="galeria__layout">
+
+                <div class="galeria__izquierda">
+                    <div class="galeria__ventana">
+                        <div class="carrousel__pista" id="pista">
+                            <img class="carrousel__img" src="img/Carrousel01323.png" alt="captura 1">
+                            <img class="carrousel__img" src="img/Carrousel01157.png" alt="captura 2">
+                            <img class="carrousel__img" src="img/Carrousel01110.png" alt="captura 3">
+                        </div>
+                    </div>
+                    <div class="carrousel__dots" id="dots">
+                        <span class="carrousel__dot carrousel__dot--activo"></span>
+                        <span class="carrousel__dot"></span>
+                        <span class="carrousel__dot"></span>
+                    </div>
+                </div>
+
+                <div class="precauciones">
+                    <h2 class="precauciones__titulo"><i class="fa-solid fa-triangle-exclamation"></i> Precauciones</h2>
+                    <ul class="precauciones__lista">
+                        <li class="precauciones__item">
+                            <i class="fa-solid fa-user-check"></i> Solo para mayores de edad
+                        </li>
+                        <li class="precauciones__item">
+                            <i class="fa-solid fa-person-pregnant"></i> No recomendado para embarazadas
+                        </li>
+                        <li class="precauciones__item">
+                            <i class="fa-solid fa-heart-pulse"></i> Contraindicado en personas con hipertensión
+                        </li>
+                        <li class="precauciones__item precauciones__item--prohibido">
+                            <i class="fa-solid fa-skull-crossbones"></i> Magia negra estrictamente prohibida
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============ PRECIOS ============ -->
+        <section class="precios" id="precios">
+            <h2 class="precios__titulo">Planes disponibles, ofreciendo:</h2>
+            <div class="precios__grid">
+
+                <article class="plan">
+                    <h3 class="plan__nombre">Free</h3>
+                    <p class="plan__precio">$0<span class="plan__periodo">/mes</span></p>
+                    <ul class="plan__lista">
+                        <li class="plan__item">Conexiones de hasta 1 hora por dia</li>
+                        <li class="plan__item">Memoria de hasta 100Mb</li>
+                    </ul>
+                    <a href="#" class="boton boton--secundario plan__boton">Empezar</a>
+                </article>
+
+                <article class="plan plan--destacado">
+                    <span class="plan__etiqueta">Mas popular</span>
+                    <h3 class="plan__nombre">Pro</h3>
+                    <p class="plan__precio">$9,<small>99</small><span class="plan__periodo">/mes</span></p>
+                    <ul class="plan__lista">
+                        <li class="plan__item">Conexiones ilimitadas</li>
+                        <li class="plan__item">Memoria de hasta 1GB</li>
+                        <li class="plan__item">Chat de voz</li>
+                    </ul>
+                    <a href="#" class="boton boton--primario plan__boton">Probar Pro</a>
+                </article>
+
+                <article class="plan">
+                    <h3 class="plan__nombre">Premium</h3>
+                    <p class="plan__precio">$15,<small>99</small><span class="plan__periodo">/mes</span></p>
+                    <ul class="plan__lista">
+                        <li class="plan__item">Todo lo de Pro</li>
+                        <li class="plan__item">3 paquetes de velas al mes</li>
+                        <li class="plan__item">3 bolsas de sal negra al mes</li>
+                        <li class="plan__item">Soporte prioritario</li>
+                    </ul>
+                    <a href="#" class="boton boton--secundario plan__boton">Contactar</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ============ OPINIONES ============ -->
+        <section class="opiniones" id="opiniones">
+            <h2 class="opiniones__titulo">Lo que dicen nuestros usuarios</h2>
+            <div class="opiniones__grid">
+
+                <blockquote class="testimonio">
+                    <p class="testimonio__texto">"Desde que uso NaviNEt me siento mas conectado con el universo."</p>
+                    <footer class="testimonio__autor">Ana, 23</footer>
+                </blockquote>
+
+                <blockquote class="testimonio">
+                    <p class="testimonio__texto">"Luego de probar NaviNEt ya no salgo de casa."</p>
+                    <footer class="testimonio__autor">Luis, 24</footer>
+                </blockquote>
+
+            </div>
+        </section>
+
+        <!-- ============ LLAMADO A LA ACCION ============ -->
+        <section class="cta">
+            <h2 class="cta__titulo">Empieza a fluir hoy</h2>
+            <p class="cta__texto">Unete a miles de personas espiritualmente en internet.</p>
+            <a href="#" class="boton boton--primario cta__boton">Crear cuenta gratis</a>
+        </section>
+
+        <script>
+            const pista = document.getElementById('pista');
+            const dots = document.querySelectorAll('.carrousel__dot');
+            let actual = 0;
+
+            function ir(n) {
+                actual = (n + 3) % 3;
+                pista.style.transform = `translateX(-${actual * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('carrousel__dot--activo', i === actual));
+            }
+
+            dots.forEach((d, i) => d.addEventListener('click', () => ir(i)));
+            setInterval(() => ir(actual + 1), 5000);
+        </script>
+
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer__cols">
+            <div class="footer__col">
+                <h4 class="footer__titulo">FocusFlow</h4>
+                <a href="#" class="footer__enlace">Sobre nosotros</a>
+                <a href="#" class="footer__enlace">Blog</a>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__titulo">Producto</h4>
+                <a href="#" class="footer__enlace">Funciones</a>
+                <a href="#" class="footer__enlace">Precios</a>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__titulo">Contacto</h4>
+                <a href="#" class="footer__enlace">Soporte</a>
+                <a href="#" class="footer__enlace">Email</a>
+            </div>
+        </div>
+        <p class="footer__copy">© 2026 NaviNEt - Hecho con Sass.</p>
+    </footer>
+
+</body>
+
+</html>
