@@ -16,10 +16,10 @@
 
     <!-- ============ NAVEGACION ============ -->
     <header class="nav">
-        <div class="nav__logo">
+        <h1 class="nav__logo">
             <img class="nav__logo__img" src="img/logo.gif" alt="logo">
-            <a href="#inicio" class="nav__logo">NaviNEt</a>
-        </div>
+            <a href="#inicio" class="nav__logo-link">NaviNEt</a>
+        </h1>
         <ul class="nav__menu">
             <li class="nav__item"><a href="#features" class="nav__enlace">Requisitos</a></li>
             <li class="nav__item"><a href="#precios" class="nav__enlace">Precios</a></li>
@@ -77,9 +77,12 @@
                         negativas en cada sesión. No es absoolutamente necesario pero lo sugerimos.</p>
                 </article>
 
-                <!-- ZONA DE PERSONALIZACION:
-             agrega AL MENOS una feature propia (la cuarta).
-             Copia la estructura de arriba y pon tu idea. -->
+                <article class="feature">
+                    <div class="feature__icono">4</div>
+                    <h3 class="feature__titulo">Procesador 64bits</h3>
+                    <p class="feature__texto">Es imposible correr el servicio en una arquitectura de 32bits. Actualiza
+                        ese dinosaurio o instálale Gentoo ;)</p>
+                </article>
 
             </div>
         </section>
@@ -116,7 +119,8 @@
                             <i class="fa-solid fa-heart-pulse"></i> Contraindicado en personas con hipertensión
                         </li>
                         <li class="precauciones__item precauciones__item--prohibido">
-                            <i class="fa-solid fa-skull-crossbones"></i> Magia negra estrictamente prohibida
+                            <i class="fa-solid fa-skull-crossbones"></i> Magia negra estrictamente prohibida (Ban
+                            permanente)
                         </li>
                     </ul>
                 </div>
@@ -160,7 +164,7 @@
                         <li class="plan__item">3 bolsas de sal negra al mes</li>
                         <li class="plan__item">Soporte prioritario</li>
                     </ul>
-                    <a href="#" class="boton boton--secundario plan__boton">Contactar</a>
+                    <a href="#" class="boton boton--secundario plan__boton">Probar Premium</a>
                 </article>
 
             </div>
@@ -172,7 +176,7 @@
             <div class="opiniones__grid">
 
                 <blockquote class="testimonio">
-                    <p class="testimonio__texto">"Desde que uso NaviNEt me siento mas conectado con el universo."</p>
+                    <p class="testimonio__texto">"Desde que uso NaviNEt me siento mas conectada con el universo."</p>
                     <footer class="testimonio__autor">Ana, 23</footer>
                 </blockquote>
 
@@ -191,45 +195,58 @@
             <a href="#" class="boton boton--primario cta__boton">Crear cuenta gratis</a>
         </section>
 
-        <script>
-            const pista = document.getElementById('pista');
-            const dots = document.querySelectorAll('.carrousel__dot');
-            let actual = 0;
-
-            function ir(n) {
-                actual = (n + 3) % 3;
-                pista.style.transform = `translateX(-${actual * 100}%)`;
-                dots.forEach((d, i) => d.classList.toggle('carrousel__dot--activo', i === actual));
-            }
-
-            dots.forEach((d, i) => d.addEventListener('click', () => ir(i)));
-            setInterval(() => ir(actual + 1), 5000);
-        </script>
-
-
     </main>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer">
-        <div class="footer__cols">
-            <div class="footer__col">
-                <h4 class="footer__titulo">FocusFlow</h4>
-                <a href="#" class="footer__enlace">Sobre nosotros</a>
-                <a href="#" class="footer__enlace">Blog</a>
+    <script>
+        const pista = document.getElementById('pista');
+        const ventana = pista.parentElement;
+        const dots = document.querySelectorAll('.carrousel__dot');
+        let actual = 0;
+        let touchStartX = 0;
+
+        function ir(n) {
+            actual = (n + 3) % 3;
+            pista.style.transform = `translateX(-${actual * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('carrousel__dot--activo', i === actual));
+        }
+
+        dots.forEach((d, i) => d.addEventListener('click', () => ir(i)));
+        setInterval(() => ir(actual + 1), 5000);
+
+        ventana.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        ventana.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                ir(diff > 0 ? actual + 1 : actual - 1);
+            }
+        });
+    </script>
+
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="footer">
+            <div class="footer__cols">
+                <div class="footer__col">
+                    <h4 class="footer__titulo" id="logo">NaviNEt</h4>
+                    <a href="#" class="footer__enlace">Sobre nosotros</a>
+                    <a href="#" class="footer__enlace">Blog</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__titulo">Producto</h4>
+                    <a href="#" class="footer__enlace">Funciones</a>
+                    <a href="#" class="footer__enlace">Precios</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__titulo">Contacto</h4>
+                    <a href="#" class="footer__enlace">Soporte</a>
+                    <a href="#" class="footer__enlace">Email</a>
+                </div>
             </div>
-            <div class="footer__col">
-                <h4 class="footer__titulo">Producto</h4>
-                <a href="#" class="footer__enlace">Funciones</a>
-                <a href="#" class="footer__enlace">Precios</a>
-            </div>
-            <div class="footer__col">
-                <h4 class="footer__titulo">Contacto</h4>
-                <a href="#" class="footer__enlace">Soporte</a>
-                <a href="#" class="footer__enlace">Email</a>
-            </div>
-        </div>
-        <p class="footer__copy">© 2026 NaviNEt - Hecho con Sass.</p>
-    </footer>
+            <p class="footer__copy">© 2026 NaviNEt - Hecho con Sass.</p>
+        </footer>
 
 </body>
 

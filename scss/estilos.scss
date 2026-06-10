@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Playfair+Display+SC:wght@400;700;900&family=Playwrite+GB+J:wght@400&display=swap');
+
 $color-1: rgb(60, 13, 72);
 $color-2: rgb(79, 120, 106);
 $color-3: rgb(143, 171, 79);
@@ -7,6 +9,9 @@ $bgcolor: rgb(32, 2, 23);
 $corner-xl: 30px;
 $corner-m: 20px;
 $corner-s: 10px;
+$font-logo: 'Coral Pixels', monospace;
+$font-texto: 'Playfair Display SC', Georgia, serif;
+$font-boton: 'Playwrite GB J', cursive;
 
 * {
     box-sizing: border-box;
@@ -15,36 +20,60 @@ $corner-s: 10px;
 }
 
 body {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: $font-texto;
     background-color: $bgcolor;
     color: $color-1;
 }
 
+h1 {
+    font-family: $font-texto;
+    font-weight: 800;
+}
+
+h2 {
+    font-family: $font-texto;
+    font-weight: 600;
+}
+
+#logo {
+    font-family: $font-logo;
+    font-size: 28px;
+}
+
 .boton {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 10px 22px;
     border-radius: $corner-m;
-    font-weight: bold;
+    font-family: $font-boton;
+    font-weight: 400;
     text-decoration: none;
+    text-transform: none;
+    /* Asegura que no haya mayúsculas forzadas */
+    font-variant: normal;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
 
     &--primario {
         background-color: $color-4;
         color: $color-1;
+        box-shadow: 0 0 4px 0.2px $color-4;
 
         &:hover {
-            filter: brightness(1.2);
+            filter: brightness(1.1);
         }
     }
 
     &--secundario {
         background-color: $color-5;
         color: $color-2;
+        box-shadow: 0 0 4px 0.2px $color-5;
 
         &:hover {
-            filter: brightness(1.2);
-
+            filter: brightness(1.1);
         }
     }
 }
@@ -53,16 +82,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
     background-color: $color-4;
     border-radius: $corner-xl;
     color: $color-1;
     padding: 12px 20px;
     margin: 10px;
+    box-shadow: 0 0 4px 0.2px $color-4;
 
     &__logo {
-        font-size: 22px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: $font-logo;
+        font-size: 32px;
         font-weight: bold;
         color: $color-1;
+        margin: 0;
+    }
+
+    &__logo-link {
+        color: inherit;
         text-decoration: none;
     }
 
@@ -70,21 +110,25 @@ body {
         display: flex;
         list-style: none;
         gap: 20px;
+        flex-wrap: nowrap;
+        padding: 0;
+        margin: 0;
     }
 
     &__enlace {
         color: $color-1;
         text-decoration: none;
+        white-space: nowrap;
 
         &:hover {
             color: $color-2;
         }
-
     }
 
     &__logo__img {
-        width: 30px;
-        height: 30px;
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
     }
 }
 
@@ -106,6 +150,7 @@ body {
         padding: 4px 10px;
         font-size: 13px;
         margin-bottom: 16px;
+        box-shadow: 0 0 4px 0.2px $color-4;
     }
 
     &__titulo {
@@ -162,22 +207,24 @@ body {
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
         justify-content: center;
     }
 }
 
 .feature {
     background-color: $color-3;
-    border-radius: $corner-m;
+    border-radius: $corner-xl;
     padding: 24px;
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 0 0 4px 0.2px $color-4;
 
     &:hover {
         background-color: $color-4;
         color: $color-1;
+        transform: scale(1.04);
 
         .feature__titulo {
             color: $color-1;
@@ -210,6 +257,7 @@ body {
     color: $color-1;
     padding: 40px;
     margin: 10px;
+    box-shadow: 0 0 4px 0.2px $color-4;
 
     &__titulo {
         font-size: 28px;
@@ -231,10 +279,11 @@ body {
     border-radius: $corner-m;
     padding: 30px 20px;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 4px 0.2px $color-3;
 
     &:hover {
-
-        filter: brightness(1.1);
         transform: scale(1.04);
         box-shadow: 0 0 10px 0 black;
     }
@@ -251,12 +300,14 @@ body {
 
     &__etiqueta {
         display: inline-block;
+        align-self: center;
         background-color: $color-5;
         color: $color-1;
         border-radius: $corner-s;
         padding: 3px 10px;
         font-size: 12px;
         margin-bottom: 10px;
+        box-shadow: 0 0 4px 0.2px $color-5;
     }
 
     &__nombre {
@@ -293,6 +344,8 @@ body {
     &__boton {
         display: block;
         text-align: center;
+        margin-top: auto;
+        /* Empuja el botón al fondo del contenedor */
     }
 }
 
@@ -319,6 +372,7 @@ body {
     border-radius: $corner-m;
     padding: 24px;
     text-align: left;
+    box-shadow: 0 0 4px 0.2px $color-3;
 
     &__texto {
         font-size: 16px;
@@ -342,6 +396,7 @@ body {
     padding: 50px 40px;
     margin: 10px;
     text-align: center;
+    box-shadow: 0 0 4px 0.2px $color-4;
 
     &__titulo {
         font-size: 30px;
@@ -553,5 +608,126 @@ body {
         text-align: center;
         border-top: 1px solid $color-4;
         padding-top: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .precios__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .galeria__layout {
+        flex-direction: column;
+    }
+
+    .galeria__ventana {
+        width: 90vw;
+        height: 90vw;
+        max-width: 480px;
+        max-height: 480px;
+    }
+
+    .precauciones {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: nowrap;
+        gap: 8px;
+        padding: 8px 12px;
+        margin: 6px;
+
+        &__logo {
+            font-size: 16px;
+            gap: 4px;
+        }
+
+        &__logo__img {
+            width: 32px;
+            height: 32px;
+        }
+
+        &__menu {
+            display: none;
+            /* Oculta los links en celular para que el botón no se salga */
+        }
+
+        .boton {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+
+        &__acciones {
+            justify-content: center;
+        }
+
+        &__visual img {
+            width: 100%;
+        }
+    }
+
+    .features {
+        padding: 30px 20px;
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .precios {
+        margin: 6px;
+        padding: 24px 16px;
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .plan--destacado {
+        transform: scale(1);
+    }
+
+    .opiniones {
+        padding: 30px 20px;
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .galeria {
+        padding: 30px 16px;
+    }
+
+    .galeria__ventana {
+        width: 85vw;
+        height: 85vw;
+    }
+
+    .cta {
+        padding: 30px 20px;
+        margin: 6px;
+    }
+
+    .footer {
+        padding: 30px 20px;
+
+        &__cols {
+            grid-template-columns: 1fr;
+        }
     }
 }
